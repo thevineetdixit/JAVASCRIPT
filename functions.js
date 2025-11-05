@@ -80,8 +80,8 @@ let object1 = {
 
 
 //you can call the function with destructuring also
-function fun({name,amount}){
-    console.log(name,amount)
+function fun({name,amount}){//THE PARAMETERS ARE PASSED AS R
+    console.log({name,amount})
 }
 
 fun(object1); //destructuring in function parameter
