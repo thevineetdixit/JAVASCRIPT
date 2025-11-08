@@ -62,7 +62,17 @@ Objecdt.defineProperty(bank,'account_number',{//you can define property using de
 bank.account_number=654321;//will not change as writable is false
 
 
+//what does it mean by enumerable 
+Object.defineProperty(bank,'name',{
+    enumerable:false,
+}); 
+for(let key in bank){
+    console.log(key); //prints money only as name is not enumerable
+}
+console.log(Object.keys(bank)); //prints [ 'money', 'account_number' ] as name is not enumerable
+//jis bhi ki ka ennumerable true hoga vo hi print hoga even jo inherited properties hote hain vo print nahi hote
 
+//configurable:false means we cannot change the property descriptor of that property again
 
 
 
