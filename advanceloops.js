@@ -23,6 +23,12 @@ console.log(obj2);//prints only own properties money and id because obj is in pr
 console.log(obj.name);//prints Vineeth
 console.log(obj.city);//prints Chennai
 //but its own properties are money and id
-//
+
+for(let key in obj2){
+    console.log(key); //prints money
+}//THE FO RIN LOOP HAVE THE ACCESS TO BOTH INHERITED AND SELF PROPERTIES
+
+
+
 
 
