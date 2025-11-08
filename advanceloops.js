@@ -15,8 +15,7 @@ for(let key in obj){
 //now we can also use Object.keys() method to get an array of keys and then use for of loop to iterate over them
 //so now we weill learn about the diff in getting keys with for in and Object.keys()
 
-let obj2 = Object.create({obj});
-obj2.money = 420;
+let obj2 = Object.create(obj);//IF IT IS ({OBJ}) THEN OBJ WILL BE THE KEY AND IN PROTOTYPE CHAIN
 obj2.id = "vineet";
 console.log(obj2);//prints only own properties money and id because obj is in prototype chain
 //it can access the properties of obj but they are not its own properties
