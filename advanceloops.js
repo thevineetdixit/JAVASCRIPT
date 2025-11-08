@@ -76,3 +76,46 @@ console.log(Object.keys(bank)); //prints [ 'money', 'account_number' ] as name i
 
 
 
+//why dont we use for in in array 
+//because for in loop iterates over all enumerable properties including inherited properties
+//so if someone extends the array prototype with some custom properties then those will also be iterated over
+//hence it is recommended to use for of loop or traditional for loop for arrays 
+//for of loop iterates over values of iterable objects like arrays, strings, maps, sets
+
+let arr =[10,20,30,40,50];
+Object.defineProperties(arr, toString,{
+    enumerable:true,
+});
+for(let index in arr){
+    console.log(index); //prints 0 1 2 3 4 toString
+}
+
+//what is defineownproerties
+//it is used to define multiple properties at once
+let person={};  
+Object.defineProperties(person,{
+    name:{
+        value:"Vineeth",    
+        writable:true,
+        enumerable:true,
+        configurable:true,
+    },
+    age:{
+        value:21,
+        writable:false,
+        enumerable:true,    
+        configurable:false,
+    },
+});
+console.log(person);//prints { name: 'Vineeth', age: 21 }   
+person.name="Rohit";//works as writable is true
+console.log(person.name);//person.age=22; //does not work as writable is false
+//console.log(person.age);//prints 21
+//delete person.age; //does not work as configurable is false
+//console.log(person.age);//prints 21   
+for(let key in person){
+    console.log(key); //prints name age as both are enumerable
+}   
+console.log(Object.keys(person)); //prints [ 'name', 'age' ] as both are enumerable
+//thus we can define multiple properties at once using defineOwnProperties
+//thus we have learned about defineProperty and defineOwnProperties 
