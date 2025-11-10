@@ -46,3 +46,4 @@ function fetchdata(){
 //        fetching data from server...
 // here fetchdata function is called every 2 seconds by setInterval function
 
+//commit paglu
