@@ -74,3 +74,4 @@ console.log(evenNumbers);
 // here filter method takes a callback function that returns true for even numbers and creates a new array with those numbers only  
 
 
+//map in javascript
