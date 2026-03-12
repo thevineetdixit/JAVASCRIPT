@@ -1,9 +1,11 @@
 const form = document.querySelector('form');
 
+//INPUT SE JAISE I KUCHH BHI DAALOGE WAISE HI CONSOLE ME AAYEGA 
 // form.addEventListener('input', (event)=>{
 //     console.log(event.target.value);
 // })
 
+//CHANGE EVENT ME JAIE HI FOCUS BAHAR JAYEGA 
 // form.addEventListener('change', (event)=>{
 //         console.log(event.target.value);
 // })
@@ -39,6 +41,8 @@ form.addEventListener('submit',(event)=>{
     // const third = document.getElementById("third");
     // console.log(third.value);
 
+    //
+    //YE FORMDATA FORM KA SARA DATA DE DETA H YE EK API H 
     const data = new FormData(form);
     
     for(let [key,value] of data.entries())

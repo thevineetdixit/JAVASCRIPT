@@ -24,18 +24,25 @@ const quotes = [
 
 
 
-const button = document.querySelector('button');
+const button = document.querySelector('button');//button ko pakada
 
+//ab button ko sunna chahte ho aur kis operation se sunna chahte ho 
+//call back function    type      event 
 button.addEventListener('click', (event)=>{
-  
-  console.log(event.target);
-  console.log(event.type);
-  console.log(event.clientX);
-  console.log(event.clientY);
+  if(event.key === 'Enter')
+  {
+    const text = document.getElementById("quote");
+    const index = Math.floor(Math.random()*quotes.length);
+    text.textContent = quotes[index];
+  }
+})
+
+//now if you want to add an event by keyborad that is when you press any key in the keyboard the quote changes
+//poore document pr hi lagega
+document.addEventListener("keydown", ()=>{
   const text = document.getElementById("quote");
   const index = Math.floor(Math.random()*quotes.length);
   text.textContent = quotes[index];
-
 })
 
 
